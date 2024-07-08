@@ -25,4 +25,24 @@ void main() {
   // OR
   days.removeLast();
   print(days);
+
+  //Q-4 Create a list of numbers & write a program to get the smallest & greatest number from a
+  //list.
+
+  List<int> numbers = [1, 43, 78, 23, 98, 2, 01, 5, 56, 82, 76, 50];
+  int smaller =
+      numbers.reduce((value, element) => value < element ? value : element);
+  int greater =
+      numbers.reduce((value, element) => value > element ? value : element);
+
+  print("The Greater is $greater & Smaller is $smaller");
+
+  //OR
+  numbers.sort();
+  int greatest = numbers[numbers.length - 1];
+  int smallest = numbers[0];
+  print("The Smaller number is $smallest & Greater is $greatest");
+
+
+  
 }
