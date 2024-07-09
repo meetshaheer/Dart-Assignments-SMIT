@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'dart:io';
 
 void main() {
   //Q-1 Create a list of names and print all names using list.
@@ -237,4 +238,91 @@ void main() {
   } else {
     print("Not Match");
   }
+
+  //Q-21 Given a map representing a user with keys "name", "isAdmin", and "isActive", write Dart
+  // code to check if the user is an active admin. If the user is both an admin and active, print "Active
+  // admin", otherwise print "Not an active admin".
+
+  Map user = {"name": "Shaheer", "isadmin": true, "isactive": true};
+  if (user["isadmin"] && user["isactive"]) {
+    print("Active Admin");
+  } else {
+    print("Isnot Active Admin");
+  }
+
+  //Q-22 Given a map representing a shopping cart with keys as product names and values as
+  // quantities, write Dart code to check if a product named "Apple" exists in the cart. Print "Product
+  // found" if it exists, otherwise print "Product not found".
+
+  Map shopping_cart = {"Apple": 2};
+
+  if (shopping_cart.containsKey("Apple")) {
+    print("Product in Cart");
+  } else {
+    print("Cart is Empty");
+  }
+
+  //Q-23 Consider the code:
+  // List nameList = [Bilal, Bilal, Bilal, Huzaifa, Huzaifa, Huzaifa];
+  // What can to be done in order to not repeat Bilal and Huzaifa multiple times?
+
+  List nameList = ["Bilal", "Bilal", "Bilal", "Huzaifa", "Huzaifa", "Huzaifa"];
+  Set norepeat = Set.of(nameList);
+  List norepeate = List.of(norepeat);
+  print(norepeate);
+
+  //Q-24 Let’s say you are given a list saved in a variable:
+  // Consider a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
+  // Write a code that takes this list and makes a new list that has only the even elements of this list
+  // in it.
+
+  List a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+  List b = [];
+
+  for (var element in a) {
+    if (element % 2 == 0) {
+      b.add(element);
+    }
+  }
+
+  print(b);
+
+  // Q-25 Write a program to print multiplication table of 7 length 15 using loop.
+
+  for (var i = 0; i < 16; i++) {
+    print("7 x $i = ${7 * i}");
+  }
+
+  // Q-26 Write a program to print items of the following array using for loop:
+  List fruits = ["apple", "banana", "mango", "orange", "strawberry"];
+  for (var i = 0; i < fruits.length; i++) {
+    print(fruits[i]);
+  }
+
+  //Q-26 Write a program to print multiples of 5 ranging 1 to 100.
+
+  for (var i = 5; i <= 100; i++) {
+    if (i % 5 == 0) {
+      print(i);
+    }
+  }
+
+  //Q-27 The Temperature Converter: It’s hot out! Let’s make a converter based on the steps here.
+  // a. Store a Celsius temperature into a variable.
+  // b. Convert it to Fahrenheit & output “NNoC is NNoF”.
+  // c. Now store a Fahrenheit temperature into a variable.
+  // d. Convert it to Celsius & output “NNoF is NNoC”.
+  // Note: NN = any number
+
+  print("Enter Temperature in Celsius");
+  double cel = double.parse(stdin.readLineSync()!);
+  double fah = (cel * 1.8) + 32;
+  print("Fahrenhiet is $fah oF");
+
+  print("Enter Temperature in Fahrenhiet");
+  fah = double.parse(stdin.readLineSync()!);
+  cel = (fah - 32) / 1.8;
+  print("Fahrenhiet is $cel oF");
+
+  
 }
