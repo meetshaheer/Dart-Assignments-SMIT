@@ -1,3 +1,5 @@
+import 'dart:async';
+
 void main() {
   //Q-1 Create a list of names and print all names using list.
 
@@ -43,6 +45,34 @@ void main() {
   int smallest = numbers[0];
   print("The Smaller number is $smallest & Greater is $greatest");
 
+  //Q-5 Create a map with name, phone keys and store some values to it. Use where to find all
+  //keys that have length 4.
 
-  
+  Map record = {"Name": "Shaheer", "Phone": 03180267479};
+
+  print(record.keys.where((element) => element.length == 4));
+
+  //Q-6 Create Map variable name world then inside it create countries Map, Key will be the name
+  //country & country value will have another map having capitalCity, currency and language to it.
+  //by using any country key print all the value of Capital & Currency.
+
+  Map<String, Map<String, String>> world = {
+    "USA": {
+      "Capital City": "Washington",
+      "Currency": "Dollar",
+      "Language": "English",
+    },
+    "Pakistan": {
+      "Capital City": "Islamabad",
+      "Currency": "PKR",
+      "Language": "Urdu",
+    },
+    "India": {
+      "Capital City": "Delhi",
+      "Currency": "INR",
+      "Language": "Hindi",
+    },
+  };
+
+  print(world["India"]);
 }
