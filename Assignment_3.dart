@@ -299,7 +299,7 @@ void main() {
     print(fruits[i]);
   }
 
-  //Q-26 Write a program to print multiples of 5 ranging 1 to 100.
+  //Q-27 Write a program to print multiples of 5 ranging 1 to 100.
 
   for (var i = 5; i <= 100; i++) {
     if (i % 5 == 0) {
@@ -307,7 +307,7 @@ void main() {
     }
   }
 
-  //Q-27 The Temperature Converter: It’s hot out! Let’s make a converter based on the steps here.
+  //Q-28 The Temperature Converter: It’s hot out! Let’s make a converter based on the steps here.
   // a. Store a Celsius temperature into a variable.
   // b. Convert it to Fahrenheit & output “NNoC is NNoF”.
   // c. Now store a Fahrenheit temperature into a variable.
@@ -324,5 +324,215 @@ void main() {
   cel = (fah - 32) / 1.8;
   print("Fahrenhiet is $cel oF");
 
-  
+  //Q-29 Write a program to create a calculator for +, -, *, / & % using if
+  // statements. Take the following input:
+  // a. First number Second number
+  // b. Operation (+, -, *, /, %)
+  // Compute & show the calculated result to user.
+  print('Enter the first number:');
+  num num1 = num.parse(stdin.readLineSync()!);
+
+  print('Enter the second number:');
+  num num2 = num.parse(stdin.readLineSync()!);
+
+  print('Enter the operation (+, -, *, /, %):');
+  String operation = stdin.readLineSync()!;
+  num result;
+  if (operation == '+') {
+    result = num1 + num2;
+  } else if (operation == '-') {
+    result = num1 - num2;
+  } else if (operation == '*') {
+    result = num1 * num2;
+  } else if (operation == '/') {
+    if (num2 != 0) {
+      result = num1 / num2;
+    } else {
+      print('Error: Division by zero is not allowed.');
+      return;
+    }
+  } else if (operation == '%') {
+    if (num2 != 0) {
+      result = num1 % num2;
+    } else {
+      print('Error: Division by zero is not allowed.');
+      return;
+    }
+  } else {
+    print('Error: Invalid operation.');
+    return;
+  }
+  print('Result: $num1 $operation $num2 = $result');
+
+  //   Q-30 Write a program that takes a character (I. e. string of length 1) and
+  // returns true if it is a vowel, false otherwise.
+
+  List<String> vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+  print('Enter a character:');
+  String input = stdin.readLineSync()!;
+
+  if (input.length == 1) {
+    if (vowels.contains(input)) {
+      print("True");
+    } else {
+      print("False");
+    }
+  } else {
+    print("Enter Single Character");
+  }
+  //Q-31 Write a program to reverse a string. For example, if my string is
+  // "natsikaP nawaJ" then my result will be "Jawan Pakistan".
+
+  String myname = "natsikaP nawaJ";
+  String reverse = '';
+  for (var i = myname.length - 1; i >= 0; i--) {
+    reverse = reverse + myname[i];
+  }
+  print(reverse);
+
+  //Q-32 Find the missing number in array of 1 to 100?
+
+  List numList = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    66,
+    67,
+    68,
+    69,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    92,
+    93,
+    94,
+    95,
+    96,
+    98,
+    99,
+    100
+  ];
+
+  for (var i = 0; i < numList.length; i++) {
+    if (numList.contains(i)) {
+    } else {
+      print(i);
+    }
+  }
+
+  //Q-33 Find the largest and smallest number in an unsorted integer array?
+
+  List<int> unsortedList = [65, 34, 43, 44, 28, 70, 47, 52, 8, 11];
+
+  int smalleest = unsortedList
+      .reduce((value, element) => value < element ? value : element);
+
+  int largest = unsortedList
+      .reduce((value, element) => value > element ? value : element);
+
+  print("Smaller is $smalleest & Largest is $largest");
+
+  //Q-35 Create a Marks sheet using loop with given data also add 5 Subjects in root directory.
+
+  List marksheet = [];
+  String? name = marksheet[0];
+  String? id = marksheet[1];
+  double? math = marksheet[2];
+  double? eng = marksheet[3];
+  double? comp = marksheet[4];
+  double? tot = marksheet[5];
+  double? per = marksheet[6];
+  for (var i = 0; i < 2; i++) {
+    print("Enter Your Name");
+    name = stdin.readLineSync();
+
+    print("Enter Your ID");
+    id = stdin.readLineSync();
+
+    print("Enter Your Maths Marks");
+    math = double.parse(stdin.readLineSync()!);
+
+    print("Enter Your English Marks");
+    eng = double.parse(stdin.readLineSync()!);
+
+    print("Enter Your Computer Marks");
+    comp = double.parse(stdin.readLineSync()!);
+
+    tot = math + eng + comp;
+    per = tot * 100 / 300;
+  }
+
+  print(marksheet);
 }
