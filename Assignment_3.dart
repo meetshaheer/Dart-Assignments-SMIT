@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 void main() {
   //Q-1 Create a list of names and print all names using list.
 
@@ -213,6 +215,26 @@ void main() {
   // code to check if the product is in stock. If the quantity is greater than 0, print "In stock",
   // otherwise print "Out of stock".
 
-  
+  Map product0012 = {"Name": "Airpods", "Price": 2200, "Quantity": 220};
+  if (product0012["Quantity"] > 0) {
+    print("In Stock");
+  } else {
+    print("Out Of Stock");
+  }
 
+  //Q-20 Create a map named "car" with the following key-value pairs: "brand" as "Toyota", "color"
+  // as "Red", "isSedan" as true. Write Dart code to check if the car is a sedan and red in color. Print
+  // "Match" if both conditions are true, otherwise print "No match".
+
+  Map<String, dynamic> car = {
+    "Brand": "Toyota",
+    "Color": "Red",
+    "Issedan": false
+  };
+
+  if (car["Issedan"] && car["Color"] == "Red") {
+    print("Match");
+  } else {
+    print("Not Match");
+  }
 }
